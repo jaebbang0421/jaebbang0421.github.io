@@ -24,7 +24,7 @@ latest_posts:
   enabled: false # set true and add files to _posts/ to show recent blog posts
 ---
 
-I am a Ph.D. student at the [Future Space Lab](#), Department of Civil and Environmental Engineering (Graduate School of Metaverse), KAIST, advised by Prof. Seung Hyun Cha.
+I am a Ph.D. student at the Future Space Lab, Department of Civil and Environmental Engineering (Graduate School of Metaverse), KAIST, advised by Prof. Seung Hyun Cha.
 
 My research focuses on **context-aware smart home automation**: integrating contextual information about users and their environments to enable both reactive and proactive control. In particular, I work on sensor-based **complex human activity recognition** in residential spaces — sector-level spatial segmentation, location encoding, and multimodal sensor fusion — and, more recently, on vision-language and large language models for physical-security monitoring.
 
