@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - main
+      - clean-main
     paths:
       - "assets/**"
       - "**.bib"
@@ -33,6 +34,7 @@ on:
     branches:
       - master
       - main
+      - clean-main
     paths:
       - "assets/**"
       - "**.bib"
