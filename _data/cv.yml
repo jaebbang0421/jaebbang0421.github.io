@@ -1,0 +1,139 @@
+# Data for the /cv/ web page (the downloadable PDF is assets/pdf/cv.pdf).
+# Section names that get a dedicated layout: Education, Publications, Projects, Awards, Experience.
+# Other section names render as simple bullet lists (use `- bullet: "..."`).
+cv:
+  name: Jae Young Jang
+  label: Ph.D. Student, Future Space Lab, KAIST
+  email: jaebbang0421@kaist.ac.kr
+  address:
+    city: Daejeon
+    region: Korea
+  summary: My research focuses on **context-aware smart home automation**, integrating contextual information about users and their environments to enable both reactive and proactive control.
+
+  sections:
+    Education:
+      - institution: Korea Advanced Institute of Science and Technology (KAIST)
+        location: Daejeon, Korea
+        studyType: Ph.D.
+        area: Department of Civil and Environmental Engineering · Graduate School of Metaverse
+        start_date: 2025-03
+      - institution: Korea Advanced Institute of Science and Technology (KAIST)
+        location: Daejeon, Korea
+        studyType: M.S.
+        area: Graduate School of Metaverse
+        start_date: 2023-03
+        end_date: 2025-02
+        highlights:
+          - "Thesis: *Complex Human Activity Recognition in Residential Spaces with Sector-Level Approach* (Advisor: Seung Hyun Cha)"
+      - institution: Seoul National University of Science and Technology
+        location: Seoul, Korea
+        studyType: B.S.
+        area: Department of Computer Science and Engineering
+        start_date: 2017-03
+        end_date: 2023-02
+        highlights:
+          - "GPA 4.18/4.5 (7th place out of 150), Major GPA 4.39/4.5"
+
+    Research Funding:
+      - bullet: "**National Research Foundation of Korea (NRF)** — Ph.D. Student Research Encouragement Grant, 2025–2027. Role: *Principal Investigator*. Title: Sector-level Spatial Segmentation and Multimodal Sensor Fusion for Complex Human Activity Recognition in Residential Environment"
+
+    Publications:
+      - title: Context-integrated complex activity recognition with sector-level location encoding in residential environments
+        publisher: Advanced Engineering Informatics, 76, 105043
+        releaseDate: 2026
+        summary: "Jang, J. Y., & Cha, S. H."
+      - title: "Development of a Physical Security Risk Matrix Integrating Heterogeneous Sensor Data and Spatiotemporal Context: Expert-Derived Parameters and Scenario-Based Validation"
+        publisher: Architectural Research, 28(1), 28
+        releaseDate: 2026
+        summary: "Seol, H., Yang, J., Jang, J. Y., Choi, D., Han, G., & Cha, S. H."
+      - title: A Computational Framework for Integrating Activity-Based Space Utilization Optimization and Office Layout Generation
+        publisher: Journal of Computational Design and Engineering (under review)
+        summary: "Song, Y., Jang, J. Y., Han, G., & Cha, S. H."
+      - title: "An AI-City Integrated Physical Security Monitoring Framework: VLM Anomaly Detection, Heterogeneous Data Fusion-Based Risk Inference, and LLM-Based SOP Automation"
+        publisher: Proceedings of the 2026 Summer Conference of the Society for Computational Design and Engineering
+        releaseDate: 2026
+        summary: "Yang, J., Jang, J. Y., Seol, H., Kwon, D., Choi, D., Cheon, H.-C., Han, G., & Cha, S. H."
+      - title: Adaptive Virtual Reality Space Design Based on Real-Time User Emotion
+        publisher: 2025 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), pp. 63–66 (poster)
+        releaseDate: 2025-10
+        summary: "Bae, S. A., Eum, Y., Kim, H. W., Kim, Y., Jeon, D., Jang, J. Y., & Cha, S. H."
+      - title: Space Utilization Based Framework For Designing Office Buildings For Efficient Space Use
+        publisher: International Conference of Smart and Sustainable Built Environment (SASBE 2024), Auckland University of Technology
+        releaseDate: 2024
+        summary: "Song, Y., Jang, J. Y., Eum, Y., & Cha, S. H."
+      - title: A Conceptual Framework of Optimized Office Floor Plan Generation Based on Space Utilization Prediction
+        publisher: The International Conference of Sustainable Development and Smart Built Environments, pp. 34–43, Springer Nature Singapore
+        releaseDate: 2024-11
+        summary: "Song, Y., Jang, J. Y., Eum, Y., & Cha, S. H."
+      - title: Development of Methodology for Automated Office Room Generation Based on Space Utilization
+        publisher: Journal of KIBIM, 14(3), 1–12
+        releaseDate: 2024
+        summary: "Song, Y., Jang, J. Y., & Cha, S. H."
+      - title: Occupant Activity Recognition in Smart Homes - The Need for Expanded Research on Sensor-Based Human Activity Recognition
+        publisher: Proceedings of the Spring Annual Conference of the Architectural Institute of Korea, 44(1), 482–485
+        releaseDate: 2024
+        summary: "Jang, J. Y., Kim, H., & Cha, S. H."
+      - title: "TeleAssiBot: Dual Secretary Assistive Robot"
+        publisher: Proceedings of the HCI Korea Conference, 1004 (poster)
+        releaseDate: 2024
+        summary: "Jung, K., Park, J., Jang, J., Kim, H. I., & Woo, W."
+      - title: Automatic floorplan generation considering energy efficiency - Focused on the Energy Performance Prediction
+        publisher: Proceedings of the Autumn Annual Conference of the Architectural Institute of Korea, 43(2), 501–504
+        releaseDate: 2023
+        summary: "Jang, J. Y., Song, Y., & Cha, S. H."
+
+    Projects:
+      - name: Sector-level Spatial Segmentation and Multimodal Sensor Fusion for Complex Human Activity Recognition in Residential Environment
+        summary: Principal Investigator · National Research Foundation
+        start_date: 2025
+        end_date: 2027
+      - name: Development and Commercialization of AI-based Next-Generation Physical Security Integrated Monitoring System
+        summary: Researcher · Korea Internet & Security Agency
+        start_date: 2026
+        end_date: 2026
+      - name: Development of Core Technologies for the Design, Construction, and Lifecycle Management of Robot-Adaptive Buildings
+        summary: Researcher · Korea Agency for Infrastructure Technology Advancement
+        start_date: 2025
+        end_date: 2029
+      - name: AI-Based Responsive-Transformative Spatial Technology for Future Space Innovation
+        summary: Researcher · National Research Foundation
+        start_date: 2025
+        end_date: 2028
+      - name: AR-AI-Cognition-Architectural Research for Transdimensional Interaction
+        summary: Researcher · National Research Foundation
+        start_date: 2024
+        end_date: 2025
+      - name: Real-time XR Interface Technology for Environmental Adaptation
+        summary: Researcher · Institute for Information & Communications Technology Planning & Evaluation
+        start_date: 2024
+        end_date: 2025
+      - name: Establishment of an International Network for Generative Agent Simulation-based Architecture Design Standard
+        summary: Researcher · National Research Foundation
+        start_date: 2024
+        end_date: 2025
+      - name: Development of Pre-Construction Spatial Evaluation System based on Multimodal Virtual Reality
+        summary: Researcher · National Research Foundation
+        start_date: 2023
+        end_date: 2028
+      - name: Space Design Framework for the Metaverse
+        summary: Researcher · National Research Foundation
+        start_date: 2022
+        end_date: 2025
+      - name: Development of IoT/AI based building envelope platform responsive to air-borne disease (COVID-19) and fire disasters
+        summary: Researcher · National Research Foundation
+        start_date: 2022
+        end_date: 2027
+      - name: Development of Artificial Intelligence Based Architectural Design Automation Technologies
+        summary: Researcher · Korea Agency for Infrastructure Technology Advancement
+        start_date: 2021
+        end_date: 2025
+
+    Awards:
+      - title: HCI Korea Best Poster Award
+        date: 2024
+        awarder: HCI Korea
+      - title: Best Paper Presentation Award
+        date: 2023
+        awarder: Architectural Institute of Korea (AIK)
+      - title: Big Data Platform Utilization Idea Contest — Encouragement Prize
+        date: 2021
