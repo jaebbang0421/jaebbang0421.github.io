@@ -1,0 +1,8 @@
+# Social links shown at the bottom of the about page (and in the navbar if enabled).
+# Order here = display order. Full key list: https://github.com/george-gca/jekyll-socials
+email: jaebbang0421@kaist.ac.kr
+scholar_userid: l-0XqUwAAAAJ # Google Scholar profile ID
+github_username: jaebbang0421
+cv_pdf: /assets/pdf/cv.pdf
+# linkedin_username: # e.g. your-linkedin-id
+# orcid_id: # e.g. 0000-0000-0000-0000
