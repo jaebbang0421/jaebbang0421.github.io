@@ -1,28 +1,56 @@
-# https://jaebbang0421.github.io
+# jaebbang0421.github.io
 
-Personal academic website of Jae Young Jang, built with the [al-folio](https://github.com/alshedivat/al-folio) starter (v1.x) and published by GitHub Pages.
-Every push to `main` triggers the **Deploy site** workflow (Actions tab), which builds the site into the `gh-pages` branch; the page updates a few minutes later.
+Personal website of **Jae Young Jang**, Ph.D. student at the Future Space Lab, KAIST.
 
-## 자주 고치는 파일
+**Live:** https://jaebbang0421.github.io
 
-| 하고 싶은 것 | 고칠 파일 |
+The site is plain HTML, CSS and JavaScript with no build step. GitHub Pages serves the repository as is, so every push goes live within a minute or two.
+
+## Structure
+
+```
+index.html                     Home: 3D scene, intro, News, Info, Education, Projects
+publications/index.html        Publications page (rendered from the JSON file below)
+404.html                       Not-found page
+assets/
+  css/style.css                All styles (light and dark themes)
+  js/site.js                   Theme toggle and profile-photo fallback
+  js/voxel-home.js             3D voxel smart home with an agent robot (three.js)
+  js/publications.js           Renders the publication list
+  data/publications.json       Publication data
+  img/profile.jpg              Profile photo (add this file; initials are shown until then)
+  img/pubs/                    Publication thumbnails
+  pdf/cv.pdf                   CV
+  vendor/three/                three.js r170 (MIT License)
+```
+
+## Common edits
+
+| Task | Where |
 |---|---|
-| 소개글·부제 수정 | `_pages/about.md` |
-| 논문 추가 | `_bibliography/papers.bib` — BibTeX 한 덩어리 추가 (Zotero → Export → BibTeX). `selected = {true}`를 넣으면 첫 화면에 노출, `abbr`는 학회 약어 배지 |
-| CV PDF 교체 | `assets/pdf/cv.pdf` 덮어쓰기 (`CV-KAIST-JaeYoungJang.docx`를 Word에서 PDF로 저장) |
-| CV 웹 페이지 내용 | `_data/cv.yml` |
-| 소셜 링크(이메일·Scholar·GitHub) | `_data/socials.yml` |
-| 이름·설명·파비콘 등 | `_config.yml` 맨 위 |
-| 프로필 사진 | `assets/img/prof_pic.jpg`로 올린 뒤 `_pages/about.md`의 `profile:` 블록 주석 해제 |
+| Add a publication | Add an entry to `assets/data/publications.json`. Put a thumbnail in `assets/img/pubs/` and set `"thumb"`. Links go in `"links"`, e.g. `{"pdf": "...", "doi": "...", "code": "..."}`. Entries with `"status"` (e.g. `"Under review"`) are listed first. |
+| Add a news item | Copy an `<li>` in the News section of `index.html`. |
+| Add a project | Copy an `<li>` in the Projects section of `index.html`. |
+| Profile photo | Upload a square image as `assets/img/profile.jpg`. |
+| LinkedIn | Set the `href` of the LinkedIn button in `index.html` and remove its `is-todo` class. |
+| Update the CV | Replace `assets/pdf/cv.pdf`. |
+| Colors and fonts | CSS variables at the top of `assets/css/style.css`. |
 
-## 숨겨 둔 메뉴 켜기
+## 3D scene
 
-blog / projects / repositories / teaching / people 페이지는 `_pages/<이름>.md`의 `nav: false`를 `nav: true`로 바꾸면 메뉴에 나타납니다.
-블로그 글은 `_posts/YYYY-MM-DD-title.md`, 뉴스는 `_news/`, 프로젝트 카드는 `_projects/`에 파일을 추가하면 됩니다 (형식은 `docs/CUSTOMIZE.md` 참고).
+The voxel room is generated in code by `assets/js/voxel-home.js`, so there is no model file. It shows a resident with a wrist sensor, three UWB beacons that ping the resident, and an agent robot that watches the resident and acts on the devices. Colors and layout are set in the `PALETTE`, `BEACONS` and `buildScene()` parts of that file.
 
-## 템플릿과 다른 점
+To use a hand-made model instead (for example from MagicaVoxel exported to `.glb` with Blender), load it with three.js `GLTFLoader` in place of `buildScene()`. The camera, controls and render loop can stay as they are.
 
-- 샘플 콘텐츠(Einstein 예시, 블로그 글, 프로젝트, 동영상 등)는 모두 제거했습니다.
-- 포인트 색을 KAIST 블루로 바꾸기 위해 `_sass/_themes.scss`를 로컬 오버라이드로 두었습니다 (gem 기본 파일 복사본에서 `--global-theme-color`/`--global-hover-color` 값만 변경). 색을 바꾸려면 이 파일 상단(라이트)과 `html[data-theme="dark"]` 블록(다크)의 두 값을 수정하세요.
-- GitHub Actions 워크플로는 배포용 `deploy.yml` 하나만 남겼습니다 (RenderCV 자동 렌더링, Lighthouse, Prettier, CodeQL 등은 제거). 필요하면 upstream 저장소의 `.github/workflows/`에서 다시 가져올 수 있습니다.
-- 원본 문서: `docs/CUSTOMIZE.md`, `docs/FAQ.md`, `docs/TROUBLESHOOTING.md`
+## Local preview
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+A local server is needed because the publication list is loaded with `fetch`.
+
+## Credits
+
+The layout is inspired by [Takuya Matsuyama's website](https://www.craftz.dog/). The code and the 3D scene are original to this site. 3D rendering uses [three.js](https://threejs.org/) (MIT License).

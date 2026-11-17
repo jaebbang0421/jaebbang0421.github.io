@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jae Young Jang</title>
+  <meta name="description" content="Jae Young Jang — Ph.D. student at KAIST Future Space Lab, building reactive and proactive smart home agents." />
+  <meta property="og:title" content="Jae Young Jang" />
+  <meta property="og:description" content="Ph.D. student at KAIST Future Space Lab, building reactive and proactive smart home agents." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script type="importmap">
+    { "imports": { "three": "/assets/vendor/three/three.module.min.js", "three/addons/controls/OrbitControls.js": "/assets/vendor/three/OrbitControls.js" } }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/"><span class="nav__brand-mark">🏠</span>Jae Young Jang</a>
+      <nav class="nav__links">
+        <a class="nav__link" href="/publications/">Publications</a>
+        <a class="nav__link" href="https://github.com/jaebbang0421/jaebbang0421.github.io" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          Source
+        </a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 3D voxel smart home (assets/js/voxel-home.js) -->
+    <div class="voxel" id="voxel" aria-label="A voxel smart home with an AI agent robot">
+      <div class="voxel__loading"><div class="voxel__spinner"></div></div>
+      <span class="voxel__hint">drag to rotate</span>
+    </div>
+
+    <div class="greeting">Hello, I'm a Ph.D. student building smart home agents at KAIST!</div>
+
+    <section class="hero">
+      <div class="hero__text">
+        <h1 class="hero__name">Jae Young Jang</h1>
+        <p class="hero__title">Ph.D. Student · Future Space Lab</p>
+        <p class="hero__affil">Dept. of Civil and Environmental Engineering, KAIST</p>
+      </div>
+      <!-- Profile photo: upload a square image to assets/img/profile.jpg (initials are shown until then) -->
+      <div class="avatar">JY<img src="/assets/img/profile.jpg" alt="Jae Young Jang" /></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Research</h2>
+      <p>
+        I am a Ph.D. student at the Future Space Lab, KAIST, advised by Prof. Seung Hyun Cha.
+        I am interested in <strong>smart home agents</strong> — systems that understand what residents are doing
+        and act on their behalf. My goal is to build smart homes that are both <strong>reactive</strong>,
+        responding to residents' requests, and <strong>proactive</strong>, anticipating their needs before they ask.
+      </p>
+      <p>
+        Toward this goal, I work on sensor-based complex human activity recognition, location-aware multimodal
+        sensor fusion, and context-aware reasoning with large language models.
+        <a href="/publications/">See my publications →</a>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">News</h2>
+      <!-- Newest first. Copy one <li> to add an item. -->
+      <ul class="rows rows--news">
+        <li><span class="rows__date">2026</span><span>Our paper on context-integrated complex activity recognition with sector-level location encoding is published in <em>Advanced Engineering Informatics</em>. <span class="pill">SCIE · Q1</span></span></li>
+        <li><span class="rows__date">2026</span><span>Our paper on a physical security risk matrix using heterogeneous sensor data is published in <em>Architectural Research</em>.</span></li>
+        <li><span class="rows__date">Oct 2025</span><span>Poster on adaptive VR space design based on real-time user emotion presented at <em>IEEE ISMAR 2025</em>.</span></li>
+        <li><span class="rows__date">2025</span><span>Awarded the NRF Ph.D. Student Research Encouragement Grant as principal investigator (2025–2027).</span></li>
+        <li><span class="rows__date">Mar 2025</span><span>Started my Ph.D. at KAIST.</span></li>
+        <li><span class="rows__date">2024</span><span>Received the HCI Korea Best Poster Award.</span></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Info</h2>
+      <div class="links">
+        <a class="link-btn" href="mailto:jaebbang0421@kaist.ac.kr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+          jaebbang0421@kaist.ac.kr
+        </a>
+        <a class="link-btn" href="/assets/pdf/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          CV
+        </a>
+        <a class="link-btn" href="https://scholar.google.com/citations?user=l-0XqUwAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5 12 4l10 5.5-10 5.5z"/><path d="M6 11.7V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.3"/></svg>
+          Google Scholar
+        </a>
+        <!-- LinkedIn: put your profile URL in href and remove the "is-todo" class -->
+        <a class="link-btn is-todo" href="#" target="_blank" rel="noopener" title="Coming soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Education</h2>
+      <ul class="rows">
+        <li><span class="rows__date">2025–</span><span>Ph.D. in Civil and Environmental Engineering (Graduate School of Metaverse), KAIST<span class="rows__sub">Future Space Lab · Advisor: Prof. Seung Hyun Cha</span></span></li>
+        <li><span class="rows__date">2023–2025</span><span>M.S., Graduate School of Metaverse, KAIST<span class="rows__sub">Thesis: Complex Human Activity Recognition in Residential Spaces with Sector-Level Approach</span></span></li>
+        <li><span class="rows__date">2017–2023</span><span>B.S. in Computer Science and Engineering, Seoul National University of Science and Technology<span class="rows__sub">GPA 4.18/4.5 (7th of 150)</span></span></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Projects</h2>
+      <!-- Copy one <li> to add a project. -->
+      <ul class="rows">
+        <li><span class="rows__date">2025–2027</span><span>Sector-level Spatial Segmentation and Multimodal Sensor Fusion for Complex Human Activity Recognition in Residential Environment<span class="rows__sub">Principal Investigator · National Research Foundation of Korea (Ph.D. Student Research Encouragement Grant)</span></span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span data-year>2026</span> Jae Young Jang. Design inspired by <a href="https://www.craftz.dog/" target="_blank" rel="noopener">Takuya Matsuyama's website</a>.
+  </footer>
+
+  <script src="/assets/js/site.js"></script>
+  <script type="module" src="/assets/js/voxel-home.js"></script>
+</body>
+</html>
