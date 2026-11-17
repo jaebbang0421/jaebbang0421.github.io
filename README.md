@@ -9,7 +9,7 @@ The site is plain HTML, CSS and JavaScript with no build step. On every push, `.
 ## Structure
 
 ```
-index.html                     Home: 3D scene, About me, News, Info, Grants & Honors
+index.html                     Home: 3D scene, About me, News, Info, Projects
 publications/index.html        Publications page (rendered from the JSON file below)
 404.html                       Not-found page
 assets/
@@ -30,7 +30,7 @@ assets/
 |---|---|
 | Add a publication | Add an entry to `assets/data/publications.json`. Put a thumbnail in `assets/img/pubs/` and set `"thumb"`. Links go in `"links"`, e.g. `{"pdf": "...", "doi": "...", "code": "..."}`. Entries with `"status"` (e.g. `"Under review"`) are listed first. |
 | Add a news item | Copy an `<li>` in the News section of `index.html`. |
-| Add a grant or honor | Copy an `<li>` in the Grants & Honors section of `index.html`. |
+| Add a project, grant or award | Copy an `<li>` in the Projects section of `index.html`. |
 | Profile photo | Upload a square image as `assets/img/profile.jpg`. |
 | Links (Email, CV, Scholar, LinkedIn) | Info section of `index.html`. |
 | Update the CV | Replace `assets/pdf/cv.pdf`. |
