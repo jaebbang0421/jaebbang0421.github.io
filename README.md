@@ -4,7 +4,7 @@ Personal website of **Jae Young Jang**, Ph.D. student at the Future Space Lab, K
 
 **Live:** https://jaebbang0421.github.io
 
-The site is plain HTML, CSS and JavaScript with no build step. GitHub Pages serves the repository as is, so every push goes live within a minute or two.
+The site is plain HTML, CSS and JavaScript with no build step. On every push, `.github/workflows/publish.yml` copies the files to the `gh-pages` branch, which GitHub Pages serves, so changes go live within a minute or two.
 
 ## Structure
 

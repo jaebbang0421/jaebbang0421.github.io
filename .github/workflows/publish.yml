@@ -1,0 +1,29 @@
+# Copies the site files to the gh-pages branch, which GitHub Pages serves.
+# There is no build step: what is in the repository is what goes live.
+name: Publish site
+
+on:
+  push:
+    branches: [clean-main, main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Push files to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages-publish
+          git rm -rq --cached .github
+          git commit -q -m "Publish ${GITHUB_SHA::7}"
+          git push --force origin gh-pages-publish:gh-pages
