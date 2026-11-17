@@ -15,7 +15,7 @@
   --nav-bg: rgba(255, 255, 255, 0.8);
   --heading-underline: #525252;
   --radius: 12px;
-  --maxw: 720px;
+  --maxw: 960px;
   --font-head: "M PLUS Rounded 1c", "Pretendard", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Inter", "Pretendard", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color-scheme: light;
@@ -129,9 +129,11 @@ main { padding-bottom: 40px; }
   position: relative;
   margin: -10px auto -16px;
   width: 100%;
-  max-width: 560px;
+  max-width: 600px;
   aspect-ratio: 1 / 1;
-  max-height: 560px;
+  max-height: 600px;
+  transform-origin: 50% 100%;   /* shrinks toward the content below while scrolling */
+  will-change: transform;
 }
 .voxel canvas { display: block; width: 100% !important; height: 100% !important; cursor: grab; }
 .voxel canvas:active { cursor: grabbing; }
@@ -259,7 +261,7 @@ main { padding-bottom: 40px; }
   font-family: var(--font-head);
   font-weight: 800;
   font-size: 1.8rem;
-  margin: 32px 0 4px;
+  margin: 12px 0 4px;
 }
 .page-lead { color: var(--muted); margin: 0 0 8px; }
 .year {
@@ -273,7 +275,7 @@ main { padding-bottom: 40px; }
 }
 .pub {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 18px;
   padding: 14px;
   margin: 0 -14px;

@@ -122,6 +122,20 @@ function init(el) {
   renderer.render(scene, camera);
   if (loading) loading.remove();
   frame();
+
+  // shrink the scene as the page scrolls down (100% at the top, 55% once scrolled past it)
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      const progress = Math.min(1, Math.max(0, window.scrollY / (el.offsetHeight * 0.9)));
+      el.style.transform = `scale(${1 - 0.45 * progress})`;
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 }
 
 // ===================================================================================
