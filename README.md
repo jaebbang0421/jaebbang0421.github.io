@@ -9,7 +9,7 @@ The site is plain HTML, CSS and JavaScript with no build step. On every push, `.
 ## Structure
 
 ```
-index.html                     Home: 3D scene, intro, News, Info, Education, Projects
+index.html                     Home: 3D scene, About me, News, Info, Projects
 publications/index.html        Publications page (rendered from the JSON file below)
 404.html                       Not-found page
 assets/
