@@ -32,7 +32,7 @@ assets/
 | Add a news item | Copy an `<li>` in the News section of `index.html`. |
 | Add a project | Copy an `<li>` in the Projects section of `index.html`. |
 | Profile photo | Upload a square image as `assets/img/profile.jpg`. |
-| LinkedIn | Set the `href` of the LinkedIn button in `index.html` and remove its `is-todo` class. |
+| Links (Email, CV, Scholar, LinkedIn) | Info section of `index.html`. |
 | Update the CV | Replace `assets/pdf/cv.pdf`. |
 | Colors and fonts | CSS variables at the top of `assets/css/style.css`. |
 
