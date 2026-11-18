@@ -2,46 +2,44 @@
 
 https://jaebbang0421.github.io
 
-[![Homepage preview](assets/img/preview.jpg)](https://jaebbang0421.github.io)
+[![Homepage preview](public/assets/img/preview.jpg)](https://jaebbang0421.github.io)
 
 ## Stack
 
-- [three.js](https://threejs.org/) - 3D library for the voxel smart home scene, generated entirely in code
-- [HTML, CSS and JavaScript](https://developer.mozilla.org/) - No framework and no build step
-- [GitHub Actions](https://github.com/features/actions) - Copies the site to the `gh-pages` branch on every push
-- [GitHub Pages](https://pages.github.com/) - Static hosting
+* [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
+* [Chakra UI](https://chakra-ui.com/) - A simple, modular and accessible component library for React
+* [Three.js](https://threejs.org/) - 3D library for JavaScript
+* [Framer Motion](https://www.framer.com/motion/) - An animation library for React
+* [GitHub Pages](https://pages.github.com/) - Static hosting, deployed by GitHub Actions
 
-## Run locally
-
-No installation is needed. Serve the folder with any static server:
+## Install
 
 ```
-python3 -m http.server 8000
-# open http://localhost:8000
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # static site in out/
 ```
 
 ## Project structure
 
 ```
 $PROJECT_ROOT
-│   # Home page: 3D scene, About me, News, Info, Projects
-├── index.html
-│   # Publications page
-├── publications
-│   # Styles, scripts (3D scene, publication list) and publication data
-├── assets/css, assets/js, assets/data
+│   # Pages: home, publications, 404
+├── pages
+│   # Navbar, footer, 3D scene, page layouts and UI parts
+├── components
+│   # Theme, 3D scene builder and site data (news, projects, publications)
+├── lib
 │   # Images, publication thumbnails and the CV PDF
-├── assets/img, assets/pdf
-│   # three.js (MIT License)
-└── assets/vendor
+└── public
 ```
 
 ## CV
 
-The CV at `assets/pdf/cv.pdf` is exported from the Word version of my CV.
+The CV at `public/assets/pdf/cv.pdf` is exported from the Word version of my CV.
 
 ```
-Edit the Word CV -> Save as PDF -> Replace assets/pdf/cv.pdf -> Push -> Live in a minute or two
+Edit the Word CV -> Save as PDF -> Replace public/assets/pdf/cv.pdf -> Push -> Live in a few minutes
 ```
 
 - Edit the Word file, not the PDF, so the two versions stay the same.
