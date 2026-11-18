@@ -73,7 +73,6 @@ const VoxelHome = () => {
       controls.minAzimuthAngle = 0.02
       controls.maxAzimuthAngle = Math.PI / 2 - 0.02
     }
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     let dragging = false
     let lastInteraction = -10
     const onStart = () => {
@@ -88,13 +87,13 @@ const VoxelHome = () => {
     controls.addEventListener('start', onStart)
     controls.addEventListener('end', onEnd)
 
-    let introT = reduceMotion ? 1 : 0
-    if (reduceMotion) limitAzimuth()
-    else {
-      controls.minAzimuthAngle = -Infinity
-      controls.maxAzimuthAngle = Infinity
-      world.scale.setScalar(0.001)
-    }
+    // intro progress is driven by frame time actually shown on screen (not wall-clock time),
+    // so a slow first render or shader compile can't swallow the spin before it is visible
+    let introT = 0
+    let introElapsed = 0
+    let swayT = 0
+    controls.minAzimuthAngle = -Infinity
+    controls.maxAzimuthAngle = Infinity
 
     // sizing
     const resize = () => {
@@ -132,17 +131,19 @@ const VoxelHome = () => {
 
       if (introT < 1) {
         // pop in while spinning several turns, fast at first and slowing down to the home view
-        introT = Math.min(1, t / INTRO_SECONDS)
+        introElapsed += dt
+        introT = Math.min(1, introElapsed / INTRO_SECONDS)
         const e = easeOutCirc(introT)
         world.scale.setScalar(0.55 + 0.45 * Math.min(1, introT * 2.5))
         const a = HOME_ANGLE - (1 - e) * INTRO_TURNS * Math.PI * 2
         camera.position.set(Math.sin(a) * RADIUS, CAM_Y, Math.cos(a) * RADIUS)
         if (introT >= 1) limitAzimuth()
-      } else if (!reduceMotion && !dragging && performance.now() / 1000 - lastInteraction > 3) {
+      } else if (!dragging && performance.now() / 1000 - lastInteraction > 3) {
         // idle: sway slowly left and right around the home view
+        swayT += dt
         off.copy(camera.position).sub(target)
         sph.setFromVector3(off)
-        const goal = HOME_ANGLE + Math.sin((t - INTRO_SECONDS) * 0.22) * 0.55
+        const goal = HOME_ANGLE + Math.sin(swayT * 0.22) * 0.55
         sph.theta += (goal - sph.theta) * Math.min(1, dt * 1.5)
         off.setFromSpherical(sph)
         camera.position.copy(target).add(off)
@@ -152,9 +153,14 @@ const VoxelHome = () => {
       controls.update(dt)
       renderer.render(scene, camera)
     }
+    // first render compiles shaders and shadow maps; start timing only after it, at the home pose
+    world.scale.setScalar(0.55)
+    const a0 = HOME_ANGLE - INTRO_TURNS * Math.PI * 2
+    camera.position.set(Math.sin(a0) * RADIUS, CAM_Y, Math.cos(a0) * RADIUS)
     renderer.render(scene, camera)
     setLoading(false)
-    frame()
+    clock.getDelta()
+    raf = requestAnimationFrame(frame)
 
     // shrink the scene as the page scrolls down (100% at the top, 55% once scrolled past it)
     let ticking = false
