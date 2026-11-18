@@ -54,15 +54,15 @@ push to the CV repo
 
 ## License
 
-The code is available under the MIT License.
+MIT License.
 
-You are welcome to fork this project and build your own homepage from it, under these conditions:
+You can create your own homepage for free without notifying me by forking this project under the following conditions:
 
-- Link to [my homepage](https://jaebbang0421.github.io) and [Takuya's website](https://www.craftz.dog/) in your footer or README.
-- Do not use my 3D scene or my personal content (profile photo, CV, publication figures).
+* Add a link to [my homepage](https://jaebbang0421.github.io/) and [Takuya's website](https://www.craftz.dog/)
+* Do not use the 3D model
 
-See [LICENSE](LICENSE) for details.
+Check out [LICENSE](./LICENSE) for more detail.
 
 ## Acknowledgement
 
-The layout of this site is inspired by [Takuya Matsuyama's website](https://www.craftz.dog/).
+This website is built based on [Takuya's website](https://www.craftz.dog/) and [Changwoon Choi's website](https://www.changwoon.info/).
