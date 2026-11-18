@@ -43,7 +43,7 @@
       .filter(([, url]) => url)
       .map(([k, url]) => `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(LINK_LABELS[k] || k)}</a>`)
       .join("");
-    const pills = [p.type, p.badge].filter(Boolean).map((x) => `<span class="pill">${esc(x)}</span>`).join("");
+    const pills = [p.type === "International Journal" ? null : p.type, p.badge].filter(Boolean).map((x) => `<span class="pill">${esc(x)}</span>`).join("");
     return `
       <article class="pub" id="${esc(p.id)}">
         ${thumb}

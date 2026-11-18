@@ -1,13 +1,22 @@
 {
-  "me": ["J. Y. Jang", "J. Jang"],
+  "me": [
+    "J. Y. Jang",
+    "J. Jang"
+  ],
   "publications": [
     {
       "id": "song-jcde",
-      "status": "Under review",
+      "year": 2026,
       "type": "International Journal",
       "abbr": "JCDE",
+      "badge": "SCIE · Q1",
       "title": "A Computational Framework for Integrating Activity-Based Space Utilization Optimization and Office Layout Generation",
-      "authors": ["Y. Song", "J. Y. Jang", "G. Han", "S. H. Cha"],
+      "authors": [
+        "Y. Song",
+        "J. Y. Jang",
+        "G. Han",
+        "S. H. Cha"
+      ],
       "venue": "Journal of Computational Design and Engineering",
       "thumb": "",
       "links": {}
@@ -17,9 +26,12 @@
       "year": 2026,
       "type": "International Journal",
       "abbr": "AEI",
-      "badge": "SCIE · Q1",
+      "badge": "SCIE · Q1 · Top 2%",
       "title": "Context-integrated complex activity recognition with sector-level location encoding in residential environments",
-      "authors": ["J. Y. Jang", "S. H. Cha"],
+      "authors": [
+        "J. Y. Jang",
+        "S. H. Cha"
+      ],
       "venue": "Advanced Engineering Informatics, 76, 105043",
       "thumb": "/assets/img/pubs/jang2026aei.jpg",
       "links": {}
@@ -30,7 +42,14 @@
       "type": "International Journal",
       "abbr": "AR",
       "title": "Development of a Physical Security Risk Matrix Integrating Heterogeneous Sensor Data and Spatiotemporal Context: Expert-Derived Parameters and Scenario-Based Validation",
-      "authors": ["H. Seol", "J. Yang", "J. Y. Jang", "D. Choi", "G. Han", "S. H. Cha"],
+      "authors": [
+        "H. Seol",
+        "J. Yang",
+        "J. Y. Jang",
+        "D. Choi",
+        "G. Han",
+        "S. H. Cha"
+      ],
       "venue": "Architectural Research, 28(1), 28",
       "thumb": "",
       "links": {}
@@ -41,7 +60,16 @@
       "type": "Domestic Conference",
       "abbr": "CDE",
       "title": "An AI-City Integrated Physical Security Monitoring Framework: VLM Anomaly Detection, Heterogeneous Data Fusion-Based Risk Inference, and LLM-Based SOP Automation",
-      "authors": ["J. Yang", "J. Y. Jang", "H. Seol", "D. Kwon", "D. Choi", "H.-C. Cheon", "G. Han", "S. H. Cha"],
+      "authors": [
+        "J. Yang",
+        "J. Y. Jang",
+        "H. Seol",
+        "D. Kwon",
+        "D. Choi",
+        "H.-C. Cheon",
+        "G. Han",
+        "S. H. Cha"
+      ],
       "venue": "Proceedings of the 2026 Summer Conference of the Society for Computational Design and Engineering",
       "thumb": "",
       "links": {}
@@ -52,7 +80,15 @@
       "type": "International Poster",
       "abbr": "ISMAR",
       "title": "Adaptive Virtual Reality Space Design Based on Real-Time User Emotion",
-      "authors": ["S. A. Bae", "Y. Eum", "H. W. Kim", "Y. Kim", "D. Jeon", "J. Y. Jang", "S. H. Cha"],
+      "authors": [
+        "S. A. Bae",
+        "Y. Eum",
+        "H. W. Kim",
+        "Y. Kim",
+        "D. Jeon",
+        "J. Y. Jang",
+        "S. H. Cha"
+      ],
       "venue": "2025 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), pp. 63–66",
       "thumb": "",
       "links": {}
@@ -63,7 +99,12 @@
       "type": "International Conference",
       "abbr": "SASBE",
       "title": "Space Utilization Based Framework For Designing Office Buildings For Efficient Space Use",
-      "authors": ["Y. Song", "J. Y. Jang", "Y. Eum", "S. H. Cha"],
+      "authors": [
+        "Y. Song",
+        "J. Y. Jang",
+        "Y. Eum",
+        "S. H. Cha"
+      ],
       "venue": "International Conference of Smart and Sustainable Built Environment (SASBE 2024), Auckland University of Technology",
       "thumb": "",
       "links": {}
@@ -74,7 +115,12 @@
       "type": "International Conference",
       "abbr": "SDSBE",
       "title": "A Conceptual Framework of Optimized Office Floor Plan Generation Based on Space Utilization Prediction",
-      "authors": ["Y. Song", "J. Y. Jang", "Y. Eum", "S. H. Cha"],
+      "authors": [
+        "Y. Song",
+        "J. Y. Jang",
+        "Y. Eum",
+        "S. H. Cha"
+      ],
       "venue": "The International Conference of Sustainable Development and Smart Built Environments, pp. 34–43, Springer Nature Singapore",
       "thumb": "",
       "links": {}
@@ -85,7 +131,11 @@
       "type": "Domestic Journal",
       "abbr": "KIBIM",
       "title": "Development of Methodology for Automated Office Room Generation Based on Space Utilization",
-      "authors": ["Y. Song", "J. Y. Jang", "S. H. Cha"],
+      "authors": [
+        "Y. Song",
+        "J. Y. Jang",
+        "S. H. Cha"
+      ],
       "venue": "Journal of KIBIM, 14(3), 1–12",
       "thumb": "",
       "links": {}
@@ -96,7 +146,11 @@
       "type": "Domestic Conference",
       "abbr": "AIK",
       "title": "Occupant Activity Recognition in Smart Homes - The Need for Expanded Research on Sensor-Based Human Activity Recognition",
-      "authors": ["J. Y. Jang", "H. Kim", "S. H. Cha"],
+      "authors": [
+        "J. Y. Jang",
+        "H. Kim",
+        "S. H. Cha"
+      ],
       "venue": "Proceedings of the Spring Annual Conference of the Architectural Institute of Korea, 44(1), 482–485",
       "thumb": "",
       "links": {}
@@ -107,7 +161,13 @@
       "type": "Domestic Poster",
       "abbr": "HCI Korea",
       "title": "TeleAssiBot: Dual Secretary Assistive Robot",
-      "authors": ["K. Jung", "J. Park", "J. Jang", "H. I. Kim", "W. Woo"],
+      "authors": [
+        "K. Jung",
+        "J. Park",
+        "J. Jang",
+        "H. I. Kim",
+        "W. Woo"
+      ],
       "venue": "Proceedings of the HCI Korea Conference, 1004",
       "thumb": "",
       "links": {}
@@ -118,7 +178,11 @@
       "type": "Domestic Conference",
       "abbr": "AIK",
       "title": "Automatic floorplan generation considering energy efficiency - Focused on the Energy Performance Prediction",
-      "authors": ["J. Y. Jang", "Y. Song", "S. H. Cha"],
+      "authors": [
+        "J. Y. Jang",
+        "Y. Song",
+        "S. H. Cha"
+      ],
       "venue": "Proceedings of the Autumn Annual Conference of the Architectural Institute of Korea, 43(2), 501–504",
       "thumb": "",
       "links": {}
