@@ -28,7 +28,7 @@ assets/
 
 | Task | Where |
 |---|---|
-| Add a publication | Add an entry to `assets/data/publications.json`. Put a thumbnail in `assets/img/pubs/` and set `"thumb"`. Links go in `"links"`, e.g. `{"pdf": "...", "doi": "...", "code": "..."}`. Entries with `"status"` (e.g. `"Under review"`) are listed first. |
+| Add a publication | Add an entry to `assets/data/publications.json`. Put a thumbnail in `assets/img/pubs/` and set `"thumb"`. Links go in `"links"`, e.g. `{"paper": "...", "pdf": "...", "code": "..."}`. Entries with `"status"` (e.g. `"Under review"`) are listed first. |
 | Add a news item | Copy an `<li>` in the News section of `index.html`. |
 | Add a project, grant or award | Copy an `<li>` in the Projects section of `index.html`. |
 | Profile photo | Upload a square image as `assets/img/profile.jpg`. |
