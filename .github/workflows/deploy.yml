@@ -1,10 +1,10 @@
 # Builds the Next.js site (static export to out/) and publishes it to the gh-pages branch,
-# which GitHub Pages serves. The build output is also saved to the build-log branch.
+# which GitHub Pages serves.
 name: Deploy site
 
 on:
   push:
-    branches: [clean-main, main]
+    branches: [master, clean-main]
   workflow_dispatch:
 
 permissions:
@@ -25,10 +25,10 @@ jobs:
           node-version: 20
 
       - name: Install
-        run: npm install --no-audit --no-fund 2>&1 | tee build.log
+        run: npm install --no-audit --no-fund
 
       - name: Build
-        run: npm run build 2>&1 | tee -a build.log
+        run: npm run build
 
       - name: Publish to gh-pages
         run: |
@@ -40,16 +40,3 @@ jobs:
           git add -A
           git commit -q -m "Publish ${GITHUB_SHA::7}"
           git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
-
-      - name: Save build log
-        if: always()
-        run: |
-          mkdir -p /tmp/log && cp build.log /tmp/log/build.log 2>/dev/null || echo "no build log" > /tmp/log/build.log
-          echo "${{ job.status }} ${GITHUB_SHA::7}" > /tmp/log/STATUS
-          cd /tmp/log
-          git init -q -b build-log
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -q -m "Build log ${GITHUB_SHA::7}"
-          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" build-log
