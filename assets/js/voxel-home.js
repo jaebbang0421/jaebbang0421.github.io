@@ -28,7 +28,9 @@ function init(el) {
   const camera = new THREE.OrthographicCamera(-12, 12, 12, -12, 0.1, 200);
   const target = new THREE.Vector3(0, 3.2, 0);
   const homeAngle = Math.PI / 4;          // looking into the room's open corner
-  const startAngle = homeAngle - 0.6;
+  const INTRO_SECONDS = 2.4;              // intro spin: very fast at first, easing out to a stop
+  const INTRO_TURNS = 3;
+  const startAngle = homeAngle;
   const radius = 30;
   camera.position.set(Math.sin(startAngle) * radius, 19, Math.cos(startAngle) * radius);
   camera.lookAt(target);
@@ -93,8 +95,13 @@ function init(el) {
   let visible = true;
   new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(el);
 
-  let introT = 0;
-  world.scale.setScalar(0.001);
+  let introT = reduceMotion ? 1 : 0;
+  world.scale.setScalar(reduceMotion ? 1 : 0.001);
+  const easeOutCirc = (x) => Math.sqrt(1 - Math.pow(x - 1, 2));
+  if (!reduceMotion) {                     // let the camera spin freely during the intro
+    controls.minAzimuthAngle = -Infinity;
+    controls.maxAzimuthAngle = Infinity;
+  }
 
   function frame() {
     requestAnimationFrame(frame);
@@ -102,18 +109,22 @@ function init(el) {
     const dt = Math.min(clock.getDelta(), 0.05);
     const t = clock.elapsedTime;
 
-    // intro: pop-in + quarter turn ease
+    // intro: pop in while spinning several turns, fast at first and slowing down to the home view
     if (introT < 1) {
-      introT = Math.min(1, introT + dt / 1.4);
-      const e = 1 - Math.pow(1 - introT, 3);
-      world.scale.setScalar(0.55 + 0.45 * e);
-      const a = startAngle + e * 0.6;
+      introT = Math.min(1, t / INTRO_SECONDS);
+      const e = easeOutCirc(introT);
+      world.scale.setScalar(0.55 + 0.45 * Math.min(1, introT * 2.5));
+      const a = homeAngle - (1 - e) * INTRO_TURNS * Math.PI * 2;
       camera.position.set(Math.sin(a) * radius, 19, Math.cos(a) * radius);
+      if (introT >= 1) {                   // back to the open-side limits
+        controls.minAzimuthAngle = 0.02;
+        controls.maxAzimuthAngle = Math.PI / 2 - 0.02;
+      }
     } else if (!reduceMotion && !dragging && performance.now() / 1000 - lastInteraction > 3) {
       // idle: sway slowly left and right around the home view
       off.copy(camera.position).sub(target);
       sph.setFromVector3(off);
-      const goal = homeAngle + Math.sin((t - 1.4) * 0.22) * 0.55;
+      const goal = homeAngle + Math.sin((t - INTRO_SECONDS) * 0.22) * 0.55;
       sph.theta += (goal - sph.theta) * Math.min(1, dt * 1.5);
       off.setFromSpherical(sph);
       camera.position.copy(target).add(off);
