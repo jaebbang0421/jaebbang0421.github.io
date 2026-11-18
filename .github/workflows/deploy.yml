@@ -35,8 +35,8 @@ jobs:
           touch out/.nojekyll
           cd out
           git init -q -b gh-pages
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Jae Young Jang"
+          git config user.email "109737754+jaebbang0421@users.noreply.github.com"
           git add -A
           git commit -q -m "Publish ${GITHUB_SHA::7}"
           git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
