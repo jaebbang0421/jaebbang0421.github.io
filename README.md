@@ -10,14 +10,18 @@ https://jaebbang0421.github.io
 * [Chakra UI](https://chakra-ui.com/) - A simple, modular and accessible component library for React
 * [Three.js](https://threejs.org/) - 3D library for JavaScript
 * [Framer Motion](https://www.framer.com/motion/) - An animation library for React
-* [GitHub Pages](https://pages.github.com/) - Static hosting, deployed by GitHub Actions
 
 ## Install
 
 ```
-npm install
-npm run dev     # http://localhost:3000
-npm run build   # static site in out/
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion next react react-dom react-icons three
+```
+
+## Run
+
+```
+npm run dev     # local server at http://localhost:3000
+npm run build   # static export to out/
 ```
 
 ## Project structure
