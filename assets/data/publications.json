@@ -22,6 +22,25 @@
       "links": {}
     },
     {
+      "id": "seol2026ar",
+      "year": 2026,
+      "type": "International Journal",
+      "abbr": "AR",
+      "badge": "KCI",
+      "title": "Development of a Physical Security Risk Matrix Integrating Heterogeneous Sensor Data and Spatiotemporal Context: Expert-Derived Parameters and Scenario-Based Validation",
+      "authors": [
+        "H. Seol",
+        "J. Yang",
+        "J. Y. Jang",
+        "D. Choi",
+        "G. Han",
+        "S. H. Cha"
+      ],
+      "venue": "Architectural Research, 28(1), 28",
+      "thumb": "",
+      "links": {}
+    },
+    {
       "id": "jang2026aei",
       "year": 2026,
       "type": "International Journal",
@@ -34,24 +53,6 @@
       ],
       "venue": "Advanced Engineering Informatics, 76, 105043",
       "thumb": "/assets/img/pubs/jang2026aei.jpg",
-      "links": {}
-    },
-    {
-      "id": "seol2026ar",
-      "year": 2026,
-      "type": "International Journal",
-      "abbr": "AR",
-      "title": "Development of a Physical Security Risk Matrix Integrating Heterogeneous Sensor Data and Spatiotemporal Context: Expert-Derived Parameters and Scenario-Based Validation",
-      "authors": [
-        "H. Seol",
-        "J. Yang",
-        "J. Y. Jang",
-        "D. Choi",
-        "G. Han",
-        "S. H. Cha"
-      ],
-      "venue": "Architectural Research, 28(1), 28",
-      "thumb": "",
       "links": {}
     },
     {
