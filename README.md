@@ -40,14 +40,17 @@ $PROJECT_ROOT
 
 ## CV
 
-The CV at `public/assets/pdf/cv.pdf` is exported from the Word version of my CV.
+`public/assets/pdf/cv.pdf` is updated automatically from my CV repository ([jaebbang0421/CV](https://github.com/jaebbang0421/CV), private):
 
 ```
-Edit the Word CV -> Save as PDF -> Replace public/assets/pdf/cv.pdf -> Push -> Live in a few minutes
+push to the CV repo
+  → GitHub Action builds the PDF from the Word file
+  → commits it here as public/assets/pdf/cv.pdf ("update cv: ...")
+  → GitHub Actions redeploys jaebbang0421.github.io
 ```
 
-- Edit the Word file, not the PDF, so the two versions stay the same.
-- Keep the file name `cv.pdf`. The CV links on the site point to this path.
+- Don't edit `public/assets/pdf/cv.pdf` by hand; the next CV update overwrites it.
+- The Action pushes here with a deploy key (*Settings → Deploy keys → CV auto-publish*), so run `git pull` before working locally.
 
 ## License
 
