@@ -247,7 +247,7 @@ main { padding-bottom: 40px; }
 .news__title:hover { color: var(--accent); }
 .news__tag {
   display: inline-block;
-  width: 64px;
+  width: 72px;
   text-align: center;
   font-size: 0.7rem;
   font-weight: 700;
@@ -258,12 +258,14 @@ main { padding-bottom: 40px; }
   border-radius: 5px;
   vertical-align: 1px;
 }
-.news__tag--paper  { background: rgba(11, 90, 168, 0.12);  color: #0b5aa8; }
+.news__tag--journal { background: rgba(11, 90, 168, 0.12);  color: #0b5aa8; }
+.news__tag--conference { background: rgba(0, 128, 128, 0.13); color: #11787a; }
 .news__tag--poster { background: rgba(128, 90, 213, 0.14); color: #6b46c1; }
 .news__tag--grant  { background: rgba(47, 133, 90, 0.14);  color: #2f855a; }
 .news__tag--award  { background: rgba(214, 158, 46, 0.18); color: #a86c00; }
 .news__tag--career { background: rgba(113, 128, 150, 0.16); color: #4a5568; }
-html[data-theme="dark"] .news__tag--paper  { color: #8ab4f8; }
+html[data-theme="dark"] .news__tag--journal { color: #8ab4f8; }
+html[data-theme="dark"] .news__tag--conference { color: #6fd6d8; }
 html[data-theme="dark"] .news__tag--poster { color: #b794f4; }
 html[data-theme="dark"] .news__tag--grant  { color: #68d391; }
 html[data-theme="dark"] .news__tag--award  { color: #f6c34a; }
