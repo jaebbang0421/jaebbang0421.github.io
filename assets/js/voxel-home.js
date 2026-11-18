@@ -51,7 +51,11 @@ function init(el) {
   // ---------- controls ----------
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.copy(target);
-  controls.enableZoom = false;
+  // mouse wheel / pinch over the scene zooms in and out
+  controls.enableZoom = true;
+  controls.zoomSpeed = 0.9;
+  controls.minZoom = 0.6;
+  controls.maxZoom = 2.0;
   controls.enablePan = false;
   controls.enableDamping = true;
   controls.dampingFactor = 0.08;
