@@ -53,7 +53,9 @@
       ],
       "venue": "Advanced Engineering Informatics, 76, 105043",
       "thumb": "/assets/img/pubs/jang2026aei.jpg",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.1016/j.aei.2026.105043"
+      }
     },
     {
       "id": "bae2025ismar",
@@ -88,7 +90,10 @@
       ],
       "venue": "Journal of KIBIM, 14(3), 1–12",
       "thumb": "/assets/img/pubs/song2024kibim.jpg",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.13161/kibim.2024.14.3.001",
+        "pdf": "https://koreascience.kr/article/JAKO202430459800303.pdf"
+      }
     },
     {
       "id": "jung2024hci",
