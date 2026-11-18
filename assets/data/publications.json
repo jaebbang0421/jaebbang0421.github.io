@@ -38,7 +38,9 @@
       ],
       "venue": "Architectural Research, 28(1), 28",
       "thumb": "/assets/img/pubs/seol2026ar.jpg",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.1007/s44515-026-00035-9"
+      }
     },
     {
       "id": "jang2026aei",
@@ -74,7 +76,9 @@
       ],
       "venue": "2025 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), pp. 63–66",
       "thumb": "/assets/img/pubs/bae2025ismar.jpg",
-      "links": {}
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/abstract/document/11236383"
+      }
     },
     {
       "id": "song2024kibim",
