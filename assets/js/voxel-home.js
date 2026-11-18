@@ -54,8 +54,8 @@ function init(el) {
   // mouse wheel / pinch over the scene zooms in and out
   controls.enableZoom = true;
   controls.zoomSpeed = 0.9;
-  controls.minZoom = 0.6;
-  controls.maxZoom = 2.0;
+  controls.minZoom = 0;     // no lower limit: keeps shrinking as you scroll
+  controls.maxZoom = 1;     // the size on page load is the largest
   controls.enablePan = false;
   controls.enableDamping = true;
   controls.dampingFactor = 0.08;
