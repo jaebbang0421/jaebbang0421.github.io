@@ -1,9 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Box, Image } from '@chakra-ui/react'
 
-// Shows /assets/img/profile.jpg when it exists, otherwise the initials.
+const PHOTO = '/assets/img/profile.jpg'
+
+// Shows the profile photo once it has loaded; until then (or if it is missing) the initials.
 const Avatar = () => {
-  const [failed, setFailed] = useState(false)
+  const [hasPhoto, setHasPhoto] = useState(false)
+
+  useEffect(() => {
+    const img = new window.Image()
+    img.onload = () => setHasPhoto(true)
+    img.src = PHOTO
+  }, [])
+
   return (
     <Box
       flex="none"
@@ -23,17 +32,8 @@ const Avatar = () => {
       color="muted"
     >
       JY
-      {!failed && (
-        <Image
-          src="/assets/img/profile.jpg"
-          alt="Jae Young Jang"
-          position="absolute"
-          inset={0}
-          w="100%"
-          h="100%"
-          objectFit="cover"
-          onError={() => setFailed(true)}
-        />
+      {hasPhoto && (
+        <Image src={PHOTO} alt="Jae Young Jang" position="absolute" inset={0} w="100%" h="100%" objectFit="cover" />
       )}
     </Box>
   )
