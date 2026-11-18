@@ -24,13 +24,13 @@ npm run build   # static site in out/
 
 ```
 $PROJECT_ROOT
-│   # Pages: home, publications, 404
+│   # Page files
 ├── pages
-│   # Navbar, footer, 3D scene, page layouts and UI parts
+│   # React component files
 ├── components
-│   # Theme, 3D scene builder and site data (news, projects, publications)
+│   # Non-react modules
 ├── lib
-│   # Images, publication thumbnails and the CV PDF
+│   # Static files for images and 3d model file
 └── public
 ```
 

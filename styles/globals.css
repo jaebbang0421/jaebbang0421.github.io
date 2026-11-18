@@ -1,6 +1,0 @@
-/* Small additions that are easier in plain CSS */
-p { text-wrap: pretty; }          /* avoid a single word alone on the last line */
-.nowrap { white-space: nowrap; }
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-}
