@@ -237,14 +237,6 @@ main { padding-bottom: 40px; }
   font-variant-numeric: tabular-nums;
 }
 .news__body { line-height: 1.6; }
-.news__title {
-  display: block;
-  margin-top: 2px;
-  color: var(--text);
-  font-size: 0.93rem;
-  font-weight: 600;
-}
-.news__title:hover { color: var(--accent); }
 .news__tag {
   display: inline-block;
   width: 72px;
