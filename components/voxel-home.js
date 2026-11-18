@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import { buildScene } from '../lib/voxel-scene'
+import { loadGLTFModel } from '../lib/model'
+import { addSceneEffects } from '../lib/voxel-scene'
 import { VoxelContainer, VoxelSpinner } from './voxel-loader'
 
 const HOME_ANGLE = Math.PI / 4 // looking into the room's open corner
@@ -9,6 +10,7 @@ const INTRO_SECONDS = 2.4 // intro spin: very fast at first, easing out to a sto
 const INTRO_TURNS = 3
 const RADIUS = 30
 const CAM_Y = 19
+const MODEL_PATH = '/smart-home.glb'
 const easeOutCirc = x => Math.sqrt(1 - Math.pow(x - 1, 2))
 
 const VoxelHome = () => {
@@ -54,7 +56,11 @@ const VoxelHome = () => {
 
     const world = new THREE.Group()
     scene.add(world)
-    const animate = buildScene(world, camera)
+    const room = new THREE.Group()
+    room.position.set(-7.5, 0, -7.5) // centre the 16 x 16 room
+    world.add(room)
+    let animate = () => {}
+    let disposed = false
 
     // controls: drag to rotate, wheel / pinch to zoom out (load size is the largest)
     const controls = new OrbitControls(camera, renderer.domElement)
@@ -153,14 +159,20 @@ const VoxelHome = () => {
       controls.update(dt)
       renderer.render(scene, camera)
     }
-    // first render compiles shaders and shadow maps; start timing only after it, at the home pose
-    world.scale.setScalar(0.55)
-    const a0 = HOME_ANGLE - INTRO_TURNS * Math.PI * 2
-    camera.position.set(Math.sin(a0) * RADIUS, CAM_Y, Math.cos(a0) * RADIUS)
-    renderer.render(scene, camera)
-    setLoading(false)
-    clock.getDelta()
-    raf = requestAnimationFrame(frame)
+    loadGLTFModel(room, MODEL_PATH)
+      .then(model => {
+        if (disposed) return
+        animate = addSceneEffects(room, model, camera)
+        // first render compiles shaders and shadow maps; start timing only after it
+        world.scale.setScalar(0.55)
+        const a0 = HOME_ANGLE - INTRO_TURNS * Math.PI * 2
+        camera.position.set(Math.sin(a0) * RADIUS, CAM_Y, Math.cos(a0) * RADIUS)
+        renderer.render(scene, camera)
+        setLoading(false)
+        clock.getDelta()
+        raf = requestAnimationFrame(frame)
+      })
+      .catch(() => setLoading(false))
 
     // shrink the scene as the page scrolls down (100% at the top, 55% once scrolled past it)
     let ticking = false
@@ -177,6 +189,7 @@ const VoxelHome = () => {
     onScroll()
 
     return () => {
+      disposed = true
       cancelAnimationFrame(raf)
       window.removeEventListener('scroll', onScroll)
       ro.disconnect()
