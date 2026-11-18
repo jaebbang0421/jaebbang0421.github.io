@@ -205,6 +205,8 @@ main { padding-bottom: 40px; }
   text-underline-offset: 6px;
 }
 .section p { margin: 0 0 10px; text-align: justify; hyphens: auto; }
+.section p { text-wrap: pretty; }   /* avoid a single word alone on the last line */
+.nowrap { white-space: nowrap; }
 
 /* timeline-style rows (news / education / projects) */
 .rows { list-style: none; margin: 0; padding: 0; }
