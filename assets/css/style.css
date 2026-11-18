@@ -218,7 +218,56 @@ main { padding-bottom: 40px; }
 }
 .rows__date { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .rows__sub { color: var(--muted); font-size: 0.92rem; display: block; }
-.rows--news li + li { border-top: 1px dashed var(--line); }
+
+/* news list */
+.news { list-style: none; margin: 0; padding: 0; }
+.news li {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.news li:first-child { border-top: none; padding-top: 4px; }
+.news__date {
+  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-top: 3px;
+  font-variant-numeric: tabular-nums;
+}
+.news__body { line-height: 1.6; }
+.news__title {
+  display: block;
+  margin-top: 2px;
+  color: var(--text);
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+.news__title:hover { color: var(--accent); }
+.news__tag {
+  display: inline-block;
+  width: 64px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 1px 7px;
+  margin-right: 6px;
+  border-radius: 5px;
+  vertical-align: 1px;
+}
+.news__tag--paper  { background: rgba(11, 90, 168, 0.12);  color: #0b5aa8; }
+.news__tag--poster { background: rgba(128, 90, 213, 0.14); color: #6b46c1; }
+.news__tag--grant  { background: rgba(47, 133, 90, 0.14);  color: #2f855a; }
+.news__tag--award  { background: rgba(214, 158, 46, 0.18); color: #a86c00; }
+.news__tag--career { background: rgba(113, 128, 150, 0.16); color: #4a5568; }
+html[data-theme="dark"] .news__tag--paper  { color: #8ab4f8; }
+html[data-theme="dark"] .news__tag--poster { color: #b794f4; }
+html[data-theme="dark"] .news__tag--grant  { color: #68d391; }
+html[data-theme="dark"] .news__tag--award  { color: #f6c34a; }
+html[data-theme="dark"] .news__tag--career { color: #cbd5e0; }
 
 .pill {
   display: inline-block;
@@ -334,6 +383,8 @@ main { padding-bottom: 40px; }
   .section p { text-align: left; }
   .rows li { grid-template-columns: 1fr; gap: 0; }
   .rows__date { font-size: 0.85rem; color: var(--muted); }
+  .news li { grid-template-columns: 1fr; gap: 2px; }
+  .news__date { padding-top: 0; }
   .pub { grid-template-columns: 1fr; gap: 10px; }
   .pub__thumb--empty { display: none; }
   .nav__inner { gap: 4px; padding: 8px 14px; }
