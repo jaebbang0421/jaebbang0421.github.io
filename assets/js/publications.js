@@ -43,8 +43,9 @@
       .filter(([, url]) => url)
       .map(([k, url]) => `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(LINK_LABELS[k] || k)}</a>`)
       .join("");
-    // journals show only their index badge (SCIE, KCI)
-    const pills = [/Journal$/.test(p.type) ? null : p.type, p.badge].filter(Boolean).map((x) => `<span class="pill">${esc(x)}</span>`).join("");
+    // journals show only their index badge (SCIE, KCI); posters show a plain "Poster" pill
+    const typePill = /Journal$/.test(p.type) ? null : /Poster$/.test(p.type) ? "Poster" : p.type;
+    const pills = [typePill, p.badge].filter(Boolean).map((x) => `<span class="pill">${esc(x)}</span>`).join("");
     return `
       <article class="pub" id="${esc(p.id)}">
         ${thumb}
