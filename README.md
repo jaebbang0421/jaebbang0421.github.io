@@ -17,13 +17,6 @@ https://jaebbang0421.github.io
 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion next react react-dom react-icons three
 ```
 
-## Run
-
-```
-npm run dev     # local server at http://localhost:3000
-npm run build   # static export to out/
-```
-
 ## Project structure
 
 ```
